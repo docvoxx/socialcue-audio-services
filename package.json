@@ -1,0 +1,37 @@
+{
+  "name": "socialcue-audio-services",
+  "version": "1.0.0",
+  "description": "Audio Services for SocialCue - Speech-to-Text and Text-to-Speech",
+  "private": true,
+  "workspaces": [
+    "gateway",
+    "services/*",
+    "shared"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "dev": "docker-compose -f docker-compose.dev.yml up",
+    "start": "docker-compose up",
+    "stop": "docker-compose down",
+    "test": "npm run test --workspaces",
+    "lint": "eslint . --ext .ts",
+    "clean": "npm run clean --workspaces && rm -rf node_modules"
+  },
+  "keywords": [
+    "audio",
+    "stt",
+    "tts",
+    "speech-to-text",
+    "text-to-speech",
+    "microservices"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}

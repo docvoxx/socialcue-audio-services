@@ -1,0 +1,76 @@
+version: '3.8'
+
+# Development overrides for Audio Services
+# Usage: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+services:
+  audio-gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+      target: development
+    environment:
+      - NODE_ENV=development
+      - LOG_LEVEL=debug
+    volumes:
+      - ./gateway/src:/app/src:ro
+      - ./gateway/package.json:/app/package.json:ro
+      - ./gateway/tsconfig.json:/app/tsconfig.json:ro
+      - /app/node_modules
+    command: npm run dev
+    ports:
+      - "3000:3000"
+      - "9229:9229"  # Node.js debug port
+    stdin_open: true
+    tty: true
+
+  stt-service:
+    build:
+      context: ./services/stt-service
+      dockerfile: Dockerfile
+      target: development
+    environment:
+      - NODE_ENV=development
+      - LOG_LEVEL=debug
+    volumes:
+      - ./services/stt-service/src:/app/src:ro
+      - ./services/stt-service/package.json:/app/package.json:ro
+      - ./services/stt-service/tsconfig.json:/app/tsconfig.json:ro
+      - /app/node_modules
+    command: npm run dev
+    ports:
+      - "3005:3005"  # Expose for direct testing
+      - "9230:9229"  # Node.js debug port
+    stdin_open: true
+    tty: true
+
+  tts-service:
+    build:
+      context: ./services/tts-service
+      dockerfile: Dockerfile
+      target: development
+    environment:
+      - NODE_ENV=development
+      - LOG_LEVEL=debug
+    volumes:
+      - ./services/tts-service/src:/app/src:ro
+      - ./services/tts-service/package.json:/app/package.json:ro
+      - ./services/tts-service/tsconfig.json:/app/tsconfig.json:ro
+      - /app/node_modules
+    command: npm run dev
+    ports:
+      - "3006:3006"  # Expose for direct testing
+      - "9231:9229"  # Node.js debug port
+    stdin_open: true
+    tty: true
+
+  redis:
+    ports:
+      - "6379:6379"  # Expose for direct access during development
+    command: redis-server --appendonly yes --loglevel debug
+
+networks:
+  # Override internal network to allow host access in dev
+  internal:
+    driver: bridge
+    internal: false

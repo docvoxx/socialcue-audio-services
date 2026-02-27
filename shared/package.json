@@ -1,0 +1,20 @@
+{
+  "name": "@socialcue-audio-services/shared",
+  "version": "1.0.0",
+  "description": "Shared utilities for Audio Services",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "@socialcue-audio-services/stt-service",
+  "version": "1.0.0",
+  "description": "Speech-to-Text Service for SocialCue Audio Services",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@socialcue-audio-services/shared": "file:../../shared",
+    "express": "^4.18.0",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "redis": "^4.6.0",
+    "axios": "^1.4.0",
+    "zod": "^3.22.0",
+    "multer": "^1.4.4",
+    "@xenova/transformers": "^2.15.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.0",
+    "@types/cors": "^2.8.0",
+    "@types/multer": "^1.4.0",
+    "@types/node": "^20.0.0",
+    "tsx": "^3.12.0",
+    "typescript": "^5.0.0",
+    "jest": "^29.0.0",
+    "@types/jest": "^29.0.0",
+    "fast-check": "^3.15.0"
+  }
+}

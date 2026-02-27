@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+docs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+coverage/
+.nyc_output/
+**/*.test.ts
+**/*.spec.ts
+jest.config.js
+
+# Environment files (use build args instead)
+.env
+.env.*
+
+# Build artifacts
+dist/
+build/
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Docker
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+
+# Audio files
+*.wav
+*.mp3
+*.m4a
+*.ogg
+*.flac
+
+# OS
+.DS_Store
+Thumbs.db
