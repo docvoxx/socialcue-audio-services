@@ -30,8 +30,8 @@ app.use('/v1/tts', authenticateAPIKey, ttsRoutes);
 app.use(errorHandler);
 
 // Start server
-const server = app.listen(config.port, () => {
-  console.log(`Audio Gateway listening on port ${config.port}`);
+const server = app.listen(config.port, config.host, () => {
+  console.log(`Audio Gateway listening on ${config.host}:${config.port}`);
   console.log(`Environment: ${config.nodeEnv}`);
   console.log(`Service: ${config.serviceName} v${config.serviceVersion}`);
 });

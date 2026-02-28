@@ -1,63 +1,45 @@
-# Dependencies
+# Node modules
 node_modules/
-npm-debug.log
-yarn-error.log
+*/node_modules/
 
-# Git
+# Build outputs (will be rebuilt)
+dist/
+*/dist/
+build/
+*/build/
+
+# Development files
 .git/
 .gitignore
-.gitattributes
+.env
+.env.*
+*.log
 
 # Documentation
 *.md
+!README_HF.md
 docs/
+
+# Tests
+**/__tests__/
+**/*.test.ts
+**/*.test.js
+*.test.ts
+*.test.js
+
+# Services (not needed for gateway-only deployment)
+services/
+shared/
+
+# Docker files
+docker-compose*.yml
+Dockerfile.dev
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# Testing
-coverage/
-.nyc_output/
-**/*.test.ts
-**/*.spec.ts
-jest.config.js
-
-# Environment files (use build args instead)
-.env
-.env.*
-
-# Build artifacts
-dist/
-build/
-
-# CI/CD
-.github/
-.gitlab-ci.yml
-.travis.yml
-
-# Docker
-Dockerfile
-docker-compose*.yml
-.dockerignore
-
-# Logs
-logs/
-*.log
-
-# Temporary files
-temp/
-tmp/
-*.tmp
-
-# Audio files
-*.wav
-*.mp3
-*.m4a
-*.ogg
-*.flac
 
 # OS
 .DS_Store
