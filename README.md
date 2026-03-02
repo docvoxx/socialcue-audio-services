@@ -16,9 +16,9 @@ Independent deployment of Audio services (STT, TTS) for SocialCue application.
 
 ## 🌐 Live Demo
 
-**Hugging Face Space**: [lannnsleepy/socialcue-audio](https://huggingface.co/spaces/lannnsleepy/socialcue-audio) *(Coming Soon)*
+**Hugging Face Space**: [lannnsleepy/socialcue-audio](https://huggingface.co/spaces/lannnsleepy/socialcue-audio) 
 
-**API Endpoint**: `https://lannnsleepy-socialcue-audio.hf.space` *(Coming Soon)*
+**API Endpoint**: `https://lannnsleepy-socialcue-audio.hf.space` 
 
 ## 📦 Repository
 
@@ -414,7 +414,7 @@ This project was developed with AI assistance to:
 
 ## 🔗 Links
 
-- **Hugging Face Space**: https://huggingface.co/spaces/lannnsleepy/socialcue-audio *(Coming Soon)*
+- **Hugging Face Space**: https://huggingface.co/spaces/lannnsleepy/socialcue-audio 
 - **GitHub Repository**: https://github.com/docvoxx/socialcue-audio-services
 - **AI Services**: https://github.com/docvoxx/socialcue-ai-services
 - **Main SocialCue App**: https://github.com/docvoxx/socialcue-main-app
