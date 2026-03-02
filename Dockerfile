@@ -16,7 +16,7 @@ RUN npm install --workspace=gateway
 COPY gateway/ ./gateway/
 
 # Copy tsconfig if needed
-COPY tsconfig.json ./gateway/ 2>/dev/null || true
+COPY tsconfig.json ./tsconfig.json
 
 # Build gateway
 WORKDIR /app/gateway

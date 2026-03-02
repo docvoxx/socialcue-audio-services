@@ -1,8 +1,79 @@
+---
+title: SocialCue Audio Services
+emoji: 🎙️
+colorFrom: green
+colorTo: blue
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # SocialCue Audio Services
 
 > **Note**: This project was developed with AI assistance to accelerate development and ensure best practices.
 
 Independent deployment of Audio services (STT, TTS) for SocialCue application.
+
+## 🌐 Live Demo
+
+**Hugging Face Space**: [lannnsleepy/socialcue-audio](https://huggingface.co/spaces/lannnsleepy/socialcue-audio) *(Coming Soon)*
+
+**API Endpoint**: `https://lannnsleepy-socialcue-audio.hf.space` *(Coming Soon)*
+
+## 📦 Repository
+
+**GitHub**: [docvoxx/socialcue-audio-services](https://github.com/docvoxx/socialcue-audio-services)
+
+## 🚀 Quick Start
+
+### Option 1: Use Hugging Face Space (Coming Soon)
+
+The easiest way to use SocialCue Audio Services will be through our hosted Hugging Face Space:
+
+```bash
+# Health check
+curl https://lannnsleepy-socialcue-audio.hf.space/health/live
+
+# Speech-to-text
+curl -X POST https://lannnsleepy-socialcue-audio.hf.space/v1/stt/transcribe \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -F "file=@audio.wav" \
+  -F "language=vi"
+
+# Text-to-speech
+curl -X POST https://lannnsleepy-socialcue-audio.hf.space/v1/tts/synthesize \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"text": "Hello world", "voice": "default"}' \
+  --output audio.wav
+```
+
+### Option 2: Deploy Your Own Space
+
+1. Fork this repository
+2. Create a new Space on Hugging Face
+3. Connect your GitHub repo or push directly:
+```bash
+git remote add hf https://huggingface.co/spaces/YOUR_USERNAME/YOUR_SPACE
+git push hf main
+```
+
+### Option 3: Run Locally with Docker
+
+```bash
+# Clone the repository
+git clone https://github.com/docvoxx/socialcue-audio-services.git
+cd socialcue-audio-services
+
+# Create external network
+docker network create socialcue-external
+
+# Build and run
+docker compose up -d
+
+# Test
+curl -H "Authorization: Bearer dev-key-1" http://localhost:3002/health
+```
 
 ## Overview
 
@@ -340,4 +411,11 @@ This project was developed with AI assistance to:
 - Create production-ready Docker configurations
 - Generate API documentation
 - Implement idempotency patterns for reliable audio processing
+
+## 🔗 Links
+
+- **Hugging Face Space**: https://huggingface.co/spaces/lannnsleepy/socialcue-audio *(Coming Soon)*
+- **GitHub Repository**: https://github.com/docvoxx/socialcue-audio-services
+- **AI Services**: https://github.com/docvoxx/socialcue-ai-services
+- **Main SocialCue App**: https://github.com/docvoxx/socialcue-main-app
 
